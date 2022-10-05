@@ -1,0 +1,126 @@
+#Burhan Rehman
+#Student Number: 100823495
+#Date: February/14/2022
+#Objective: Answer the three questions given in the lab assignment.
+
+
+QUESTION 1 ##########################################################################################################
+
+class Address:
+    def __init__(self, Country, City, StreetName, HouseNumber):
+        self.Country = Country
+        self.City = City
+        self.StreetName = StreetName
+        self.HouseNumber = HouseNumber
+
+class Person(Address):
+    def __init__(self,FirstName, LastName, Age, ContactNumber):
+        super().__init__()
+        self.FirstName = FirstName
+        self.LastName = LastName
+        self.Age = Age
+        self.ContactNumber = ContactNumber
+
+
+class Employee(Person):
+    def __init__(self, EmployeeID, OrgName, Position):
+        super().__init__()
+        self.EmployeeID = EmployeeID
+        self.OrgName = OrgName
+        self.Position = Position
+
+
+class CommissionEmployee(Employee, Address):
+    def __init__(self, CommissionRate, TotalEarning):
+        super().__init__()
+        self.CommissionRate = CommissionRate
+        self.TotalEarning = TotalEarning
+
+    def CalculateCommission(self, GrossSale):
+        TotalEarning = GrossSale*self.CommissionRate
+        print(TotalEarning)
+
+    def DisplayData(self):
+        print(self.FirstName, "\n", self.LastName, "\n", self.Age, "\n", self.Address, "\n", self.ContactNumber, "\n",
+              self.EmployeeID, "\n", self.OrgName, "\n", self.Position, "\n", self.CommissionRate, "\n",
+              self.TotalEarning)
+
+
+class SalariedEmployee(Employee, Address):
+    def __init__(self, BaseSalary, NetSalary):
+        super().__init__()
+        self.BaseSalary = BaseSalary
+        self. NetSalary = NetSalary
+
+    def CalculateNetSalary(self, ProvisionalTax, Insurance, FedTax):
+        NetSalary = self.BaseSalary - (self.BaseSalary*ProvisionalTax + self.BaseSalary*FedTax + self.BaseSalary*Insurance)
+        return NetSalary
+
+    def DisplayData(self):
+        print(self.FirstName, "\n", self.LastName, "\n", self.Age, "\n", self.Address, "\n", self.ContactNumber, "\n",
+              self.EmployeeID, "\n", self.OrgName, "\n", self.Position, "\n", self.BaseSalary, "\n",
+              SalariedEmployee.CalculateNetSalary(self, 0.13, 0.01, 0.03))
+
+
+class BasePlusCommissionEmployee(CommissionEmployee, Address):
+    def __init__(self, BaseSalary):
+        super().__init__()
+        self.BaseSalary = BaseSalary
+
+    def CalculateTotalEarning(self, BaseSalary):
+        print(super().CalculateCommission(BaseSalary))
+
+    def DisplayData(self):
+        print(self.FirstName, "\n", self.LastName, "\n", self.Age, "\n", self.Address, "\n", self.ContactNumber, "\n",
+              self.EmployeeID, "\n", self.OrgName, "\n", self.Position, "\n",
+              BasePlusCommissionEmployee.CalculateTotalEarning(self, BaseSalary))
+
+###############################################################################################################################################
+
+CLASS DIAGRAM ATTACHED IN EMAIL
+
+###############################################################################################################################################
+
+QUESTION 2#####################################################################################################################################
+
+class ISBN:
+    def __init__(self,ISBN):
+        self.ISBN = ISBN
+
+    def InputBookISBN(self):
+        self.ISBN = input("Please enter the ISBN of the book: ")
+
+class Book(ISBN):
+    def __init__(self, Title, AuthorName, PublisherName, Address, Price):
+        super().__init__(ISBN)
+        self.Title = Title
+        self.AuthorName = AuthorName
+        self.PublisherName = PublisherName
+        self.Address = Address
+        self.Price = Price
+
+    def SetBookISBN(self):
+        self.InputBookISBN()
+        self.Title = input("Please enter the book's title: ")
+        self.AuthorName = input("Please enter the author's name: ")
+        self.PublisherName = input("Please enter the publisher's name: ")
+        self.Address = input("Please enter address: ")
+        self.Price = float(input("Enter price: "))
+
+    def DisplayBookISBN(self):
+        print("Book ISBN:", self.ISBN)
+        print("Title of the book: ", self.Title)
+        print("Name of the author: ", self.AuthorName)
+        print("Name of the publisher: ", self.PublisherName)
+        print("Address: ", self.Address)
+        print("Price of the book", self.Price)
+
+B=Book("Title","Author name","Publisher name","Address","Price")
+B.SetBookISBN()
+B.DisplayBookISBN()
+
+###############################################################################################################################################
+
+CLASS DIAGRAM ATTACHED IN EMAIL
+
+###############################################################################################################################################

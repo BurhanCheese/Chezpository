@@ -1,0 +1,90 @@
+#Burhan Rehman
+#Student Number: 100823495
+#Date: February/25/2022
+#Create a job system for an rpg game
+
+import random
+
+class Job:
+    def __init__(self, CharacterName, CharacterLevel, MaxHP, CurrentHP, MaxMP, CurrentMP):
+        self.CharacterName = CharacterName
+        self.CharacterLevel = CharacterLevel
+        self.MaxHP = 0
+        self.CurrentHP = 0
+        self.MaxMP = 0
+        self.CurrentMP = 0
+
+    def DisplayData(self):
+        print("Character Name: ", self.CharacterName, "\nCharacter Level: ", self.CharacterLevel, "\nMax HP: ", self.MaxHP,
+              "\nCurrentHP: ", self.CurrentHP, "\nMax MP: ", self.MaxMP, "\nCurrent MP: ", self.CurrentMP)
+
+class Mage(Job):
+    def __init__(self, CharacterName, CharacterLevel, MaxHP, CurrentHP, MaxMP, CurrentMP):
+        super().__init__(CharacterName, CharacterLevel, MaxHP, CurrentHP, MaxMP, CurrentMP)
+        self.MaxHP = 6
+        self.CurrentHP = 6
+        self.MaxMP = 10
+        self.CurrentMP = 10
+
+    def MeleeAttack(self):
+        print("You perform a melee attack!")
+        MeleeDamage = random.randint(1,3)
+        print("You did ", MeleeDamage, " Damage!")
+
+    def MagicAttack(self):
+        print("You perform a magic attack!")
+        if self.CurrentMP>=10:
+            self.CurrentMP = int(self.CurrentMP - 10)
+            MagicDamage = random.randint(9,11)
+            print("You did", MagicDamage, "Damage!")
+        else:
+            print("Not enough MP!")
+
+    def DisplayData(self):
+        print("Character Name: ", self.CharacterName, "\nCharacter Level: ", self.CharacterLevel, "\nMax HP: ", self.MaxHP,
+              "\nCurrentHP: ", self.CurrentHP, "\nMax MP: ", self.MaxMP, "\nCurrent MP: ", self.CurrentMP)
+
+class SwordMage(Mage):
+    def __init__(self, CharacterName, CharacterLevel, MaxHP, CurrentHP, MaxMP, CurrentMP):
+        super().__init__(CharacterName, CharacterLevel, MaxHP, CurrentHP, MaxMP, CurrentMP)
+        self.MaxHP = 8
+        self.CurrentHP = 8
+        self.MaxMP = 10
+        self.CurrentMP = 10
+
+    def MeleeAttack(self):
+        print("You perform a melee attack!")
+        MeleeDamage = random.randint(3,5)
+        print("You did ", MeleeDamage, " Damage!")
+
+    def MagicAttack(self):
+        print("You perform a magic attack!")
+        if self.CurrentMP>=10:
+            self.CurrentMP = int(self.CurrentMP - 10)
+            MagicDamage = random.randint(5,7)
+            print("You did", MagicDamage, "Damage!")
+        else:
+            print("Not enough MP!")
+
+    def DisplayData(self):
+        print("Character Name: ", self.CharacterName, "\nCharacter Level: ", self.CharacterLevel, "\nMax HP: ", self.MaxHP,
+              "\nCurrentHP: ", self.CurrentHP, "\nMax MP: ", self.MaxMP, "\nCurrent MP: ", self.CurrentMP)
+
+
+
+J=Job("John", "X", "MaxHP", "CurrentHP", "MaxMP", "CurrentMP")
+J.DisplayData()
+
+print("################################################################")
+
+M=Mage("John", "X", "MaxHP", "CurrentHP", "MaxMP", "CurrentMP")
+M.MeleeAttack()
+M.MagicAttack()
+M.DisplayData()
+
+print("################################################################")
+
+SM=SwordMage("John", "X", "MaxHP", "CurrentHP", "MaxMP", "CurrentMP")
+SM.MeleeAttack()
+SM.MagicAttack()
+SM.DisplayData()
