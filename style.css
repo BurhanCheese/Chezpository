@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(128, 53, 9, 0.644), rgba(40, 8, 116, 0.5)), /* Gradient overlay */
+        url('insomnia.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Update the selector from .navbar to nav */
+nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav a {
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 50px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #D68440;
+    color: rgb(255, 255, 255);
+}
+
+nav a.active {
+    background-color: #6E51A8;
+    color: rgb(255, 255, 255);
+}
+
+main {
+    padding: 20px;
+    color:#b3ff00;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #b3ff00;
+    text-decoration: none;
+}
