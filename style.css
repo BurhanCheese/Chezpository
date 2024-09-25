@@ -5,7 +5,7 @@ body {
     color: #ffffff;
     background-image: 
         linear-gradient(rgba(128, 53, 9, 0.644), rgba(40, 8, 116, 0.5)),
-        url('insomnia.webp');
+        url('resource/insomnia.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,7 +103,7 @@ img {
 
 .about-content p {
     flex: 1;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #ffffff;
     margin: 0;
     padding: 20px;
@@ -193,6 +193,34 @@ img {
     text-align: center;
     padding-top: 2%;
   }
+
+.project {
+    display: flex;
+    align-items: center;
+    padding: 200px;
+    gap: 60px;
+}
+
+.project2 {
+    display: flex;
+    align-items: center;
+    padding: 200px;
+    gap: 60px;
+}
+
+.project3 {
+    display: flex;
+    align-items: center;
+    padding: 200px;
+    gap: 60px;
+}
+
+.project4 {
+    display: flex;
+    align-items: center;
+    padding: 200px;
+    gap: 60px;
+}
 
 h1 {
     color: #ffffff;
