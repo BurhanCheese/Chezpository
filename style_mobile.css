@@ -144,7 +144,7 @@ img {
     padding: 15px 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, rgba(40, 8, 116, 0.5), rgba(128, 53, 9, 0.644));
 }
 
 .contact-form h2 {
